@@ -1,0 +1,15 @@
+vich_uploader:
+    db_driver: orm
+    metadata:
+        type: attribute
+
+    mappings:
+       bonplan_images:
+           uri_prefix: /images/bonplans
+           upload_destination: '%kernel.project_dir%/public/images/bonplans'
+           namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+       reservation_images:
+           uri_prefix: /images/reservation
+           upload_destination: '%kernel.project_dir%/public/images/reservation'
+           namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+

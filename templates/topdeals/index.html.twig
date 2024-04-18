@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bon plans{% endblock %}
+
+{% block body %}
+    Cliquez ici pour créer votre bon plan <a href="{{ path('app_registerdeals') }}" class="btn btn-secondary mt-3">+</a> 
+    {% for deals in deal %}
+    {% if (deals.status == true) %}
+    <div class="wrapper">
+        <div class="one">
+            <img src="{{ vich_uploader_asset(deals, 'imageFile')}}" alt="" id="photoprod">
+        </div>
+        <div class="two">
+            <div id="nomp">{{deals.brandName}}</div> 
+            <div id="nomm">{{deals.productName}}</div>
+            <div id="Explication">{{deals.description}}</div>
+        </div>
+        <div class="three">
+            <div id="prix">{{deals.price}} euro</div></div>     
+        </div>
+    {% endif %}
+    {% endfor %}
+
+        
+      
+
+ {# <a href="{{ path('app_registerdeals') }}" class="btn btn-secondary mt-3">+</a>
+
+{% for deals in deal %}
+    {% if (deals.status == true) %}
+        <section id="sectionproduit">
+            <div class="boxbp">
+                <div id="information"></div> 
+                <div id="adresse">{{deals.adress}} {{deals.zipCode}} {{deals.city}}</div>
+                <br>
+            </div>
+        </section>
+
+        <div class="wrapper">
+            <div class="one">
+                <img src="{{ vich_uploader_asset(deals, 'imageFile')}}" alt="" id="photoprod">
+            </div>
+            <div class="two">
+                <div id="nomp">{{deals.brandName}} </div> 
+                <div id="nomm">{{deals.productName}} </div>
+                <div id="Explication">{{deals.description}} </div>
+            </div>
+            <div class="three">
+                <div id="prix">{{deals.price}} euro</div>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
+</body> #}
+
+{# 
+<div class="example-wrapper">
+
+ <a href="{{ path('app_registerdeals') }}" class="btn btn-secondary mt-3">+</a>
+<br>
+{% for deals in deal %}
+    {% if (deals.status == true) %}
+    {{deals.id}} : {{deals.brandName}} <br>
+    {% endif %}
+{% endfor %}
+</div> #}
+{% endblock %}
+

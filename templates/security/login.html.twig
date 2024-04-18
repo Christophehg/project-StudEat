@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+
+    {% if error %}
+    <div class="alert alert-danger">{{error.messageKey}}</div>
+    {% endif %}
+
+    <form method="post" class="container">
+        <label for="username">Nom d'utilisateur</label>
+        <input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control" required/>
+
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="_password" class="form-control" required/>
+        {# <a href="{{ path('app_forgot_password_request') }}" class="btn btn-secondary mt-3">Mot de passe oublié</a> #}
+
+        <button type="sumbit" class="btn btn-primary mt-3">Connexion</button><br>
+        Vous n'avez pas encore de compte ?<br><a href="{{ path('app_inscription') }}" style="color: green">S'inscrire</a> maintenant
+
+
+        </form>
+{% endblock %}

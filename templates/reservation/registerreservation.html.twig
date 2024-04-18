@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer une réservation{% endblock %}
+
+{% block body %}
+<div 
+style="position: absolute;
+    top: 98px;
+    left: 602px;
+    max-width: 1022px;"> 
+{{ form_start(ReservForm, {'attr': {'novalidate': 'novalidate'}}) }}
+    {{form_row(ReservForm.Title,{'attr': {'placeholder': 'Exemple: (Couscous)'}})}}
+    {{form_row(ReservForm.Slots,{'attr': {'placeholder': 'Exemple: (5)'}})}}     
+    {{form_row(ReservForm.adress,{'attr': {'placeholder': 'Exemple: (3 rue jean paul)'}})}}
+    {{form_row(ReservForm.Zipcode,{'attr': {'placeholder': 'Exemple: (75010)'}})}}
+    {{form_row(ReservForm.City,{'attr': {'placeholder': 'Exemple: (Paris)'}})}}     
+    {{form_row(ReservForm.Description,{'attr': {'placeholder': 'Exemple: (Plat emblématique de l\'Afrique du Nord, le couscous se compose communément d\'une semoule de blé dur arrosée de bouillon et garnie de viande et de légumes. Mais ses saveurs et ses appellations varient selon les lieux, les époques, les saisons, les occasions.)'}})}}
+    {{form_row(ReservForm.Ingredient,{'attr': {'placeholder': 'Exemple: (couscous(1),carottes(1),poivrons(1))'}})}}
+    {{form_row(ReservForm.imageFile)}}
+
+    <a href="{{ path('app_reservation') }}" class="btn btn-secondary mt-3">Retour</a>
+    <button type="sumbit" class="btn btn-primary mt-3">Publier</button>
+{{form_end(ReservForm)}}
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MapController!
+{% endblock %}
+
+{% block javascripts %}
+	<script type="module" src="{{ asset('js/index.js') }}"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHBJD2BgDF2Xj4Cis2TjPcnPL3CtcVLzQ&callback=initMap&v=weekly" defer></script>
+
+{% endblock %}
+
+{% block body %}
+	<div id="map" style="top: 50px;left: 388px;width: 50vw; height: 70vh"></div>
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
+
+	<div class="example-wrapper">
+
+		<ul>
+			{# <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/view?zoom=17&center=48.8799%2C2.3659&key=AIzaSyDHBJD2BgDF2Xj4Cis2TjPcnPL3CtcVLzQ"></iframe>
+																																												#}
+		</ul>
+	</div>
+
+
+{% endblock %}

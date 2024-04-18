@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Acceuil{% endblock %}
+
+{% block body %}
+<body>
+   <section id="sectionmain">
+
+        <div id="regroupeimg">
+            <img src={{asset('images/Don.jpg')}} alt="" id="imagemenu1">
+            <Div id="premspartsite">
+                <h1>L'aide à l'alimentation</h1>
+                <p1>Chez StudEat, nous prenons le quotidien avec vous dès le début. Et nous restons à vos côtés les jours d’après.</p1>
+            </Div>
+            <div class="Bouttonaccueil">Réservation <div id="accéesreservation"></div></div>
+            <div class="Bouttonaccueil">Bon plans</div>
+            <div class="Bouttonaccueil">carte</div>
+        </div>
+
+        <img src="" alt="" id="image-panier">
+        <div id="deuxpartsite">
+            <h2>Pour bien manger, il faut faire un bon panier</h2>
+            <p2>Nous vous apportons un soutien adapté et bienveillant durant toutes vos courses. Rejoignez nous.</p2>
+            <h3>98% de satisfaction !</h3>
+            <p3>Mangez avec enthousiame à nos côtés.</p3>
+        </div>
+        
+        <div class="login">
+            <a href="{{ path('login')}}"><button id="Connexion">Connexion</button></a>
+           <a href="{{ path('app_inscription')}}"> <button id="inscription">Inscription</button></a>
+        </div>
+    </section>
+
+
+</body>
+{% endblock %}

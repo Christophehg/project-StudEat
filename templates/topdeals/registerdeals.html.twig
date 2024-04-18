@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un bon plan{% endblock %}
+
+{% block body %}
+<div 
+style="position: absolute;
+    top: 98px;
+    left: 602px;
+    max-width: 1022px;"> 
+{{ form_start(DealForm, {'attr': {'novalidate': 'novalidate'}}) }}
+    {{form_row(DealForm.brandName,{'attr': {'placeholder': 'Exemple: (Coca-Cola)'}})}}
+    {{form_row(DealForm.productName,{'attr': {'placeholder': 'Exemple: (Soda)'}})}}     
+    {{form_row(DealForm.description,{'attr': {'placeholder': 'Exemple: (Le Coca-Cola est une boisson gazeuse non alcoolisée produite par la société américaine The Coca-Cola Company)'}})}}
+    {{form_row(DealForm.adress,{'attr': {'placeholder': 'Exemple: (8 rue paul pierre)'}})}}
+    {{form_row(DealForm.zipCode,{'attr': {'placeholder': 'Exemple: (75011)'}})}}     
+    {{form_row(DealForm.city,{'attr': {'placeholder': 'Exemple: (Paris)'}})}}
+    {{form_row(DealForm.storeName,{'attr': {'placeholder': 'Exemple: (Franprix)'}})}}
+    {{form_row(DealForm.price,{'attr': {'placeholder': 'Exemple: (1.69)'}})}}
+    {{form_row(DealForm.imageFile)}}
+
+    <a href="{{ path('app_topdeals') }}" class="btn btn-secondary mt-3">Retour</a>
+    <button type="sumbit" class="btn btn-primary mt-3">Publier</button>
+{{form_end(DealForm)}}
+</div>
+{% endblock %}

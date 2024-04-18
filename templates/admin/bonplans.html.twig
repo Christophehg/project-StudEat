@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin Menu{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+
+<br>
+{% for deals in modifdeal %}
+
+    {% if (deals.status == false ) %}
+    <div style="margin-left: 43px;">{{deals.id}} : {{deals.brandName}} | {{deals.productName}} | {{deals.description}} | {{deals.adress}}, {{deals.zipCode}}, {{deals.city}}  | {{deals.storeName}} | {{deals.price}} | img : <img style =" max-width: 150px" src="{{ vich_uploader_asset(deals, 'imageFile')}}"> | Status : Inactif <br> <a href='{{ path('app_admin_bonplan_status', {"id": deals.id})}}' class="btn btn-secondary btn-sm">Update</a><a href='{{ path('app_admin_bonplan_delete', {"id": deals.id})}}' class="btn btn-secondary btn-sm" onclick="return confirm('Le bon plan est le point d\'être supprimé. Cette action est irréversible !')"> Supprimer</a></div>  <br>
+    {% else %}
+    <div style="margin-left: 43px;">{{deals.id}} : {{deals.brandName}} | {{deals.productName}} | {{deals.description}} | {{deals.adress}}, {{deals.zipCode}}, {{deals.city}}  | {{deals.storeName}} | {{deals.price}} | img : <img style =" max-width: 150px" src="{{ vich_uploader_asset(deals, 'imageFile')}}"> | Status : Actif <br> <a href='{{ path('app_admin_bonplan_status', {"id": deals.id})}}' class="btn btn-secondary btn-sm">Update</a><a href='{{ path('app_admin_bonplan_delete', {"id": deals.id})}}' class="btn btn-secondary btn-sm" onclick="return confirm('Le bon plan est le point d\'être supprimé. Cette action est irréversible !')">Supprimer</a></div>  <br>
+    {% endif %}
+{% endfor %}
+</div>
+{% endblock %}

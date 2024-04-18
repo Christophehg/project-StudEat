@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réservation{% endblock %}
+
+{% block javascripts %}
+	<script type="module" src="{{ asset('js/index.js') }}"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHBJD2BgDF2Xj4Cis2TjPcnPL3CtcVLzQ&callback=initMap&v=weekly" defer></script>
+
+{% endblock %}
+{% block body %}
+
+<body>
+    Cliquez ici pour créer votre réservation <a href="{{ path('app_reservation_register') }}" class="btn btn-secondary mt-3">+</a> 
+
+    {% for reservation in reserv %}
+    {% if (reservation.status == true) %}
+    <div class="wrapper2">
+        <div class="one">
+            <img src="{{ vich_uploader_asset(reservation, 'imageFile')}}" alt="" id="photoprod">
+        </div>
+        <div class="two">
+            <div id="nomp">{{reservation.title}}</div> 
+            <div id="adresse">{{reservation.adress}}, {{reservation.Zipcode}}, {{reservation.City}}</div>
+            {# <div id="nomm">	<div id="map" style="width: 22vw; height: 35vh"></div></div> #}
+            <div id="prix">{{reservation.Description}}</div>
+            <div id="ingredient">{{reservation.Ingredient}}</div>
+
+        </div>
+        <div class="three">
+            <div id="Explication">{{reservation.Takedslots}} / {{reservation.Slots}} places</div></div>
+            {% if(app.user.status_reservation == true and app.user.idreservasion == reservation.id) %}
+            <a href='{{ path('app_admin_reservation_reserve', {"id": reservation.id})}}'><button id="inscription2">Annuler</button></a>
+            {% else %}
+            <a href='{{ path('app_admin_reservation_reserve', {"id": reservation.id})}}'><button id="inscription2">réservation</button></a>
+            {% endif %}
+        </div>
+    </div> 
+    {% endif %}
+    {% endfor %}
+
+      
+</body>
+{% endblock %}

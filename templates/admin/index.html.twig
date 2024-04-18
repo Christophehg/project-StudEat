@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin panel{% endblock %}
+
+{% block body %}
+
+
+
+<div class="example-wrapper">
+<div id="rectangle">
+
+<a href="{{ path('app_admin_bonplan') }}" class="btn btn-secondary mt-3">Bon Plans</a>
+<a href="{{ path('app_admin_reservation') }}" class="btn btn-secondary mt-3">Réservation</a>
+</div>
+</div>
+{% endblock %}

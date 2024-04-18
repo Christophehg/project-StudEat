@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<div class="container"> 
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    {{form_row(form.lastName,{'attr': {'placeholder': 'Exemple: (Dupont)'}})}}
+    {{form_row(form.firstName,{'attr': {'placeholder': 'Exemple: (Pierre)'}})}}     
+    {{form_row(form.email,{'attr': {'placeholder': 'Exemple: (pierre.dupont@gmail.com)'}})}}
+    {{form_row(form.phone,{'attr': {'placeholder': 'Exemple: (0754678932)'}})}}
+    {{form_row(form.username,{'attr': {'placeholder': 'Exemple: (Jeandu75)'}})}}     
+    {{form_row(form.password)}}
+    <a href="{{ path('login') }}" class="btn btn-secondary mt-3">Retour</a>
+    <button type="sumbit" class="btn btn-primary mt-3">Inscription</button>
+{{form_end(form)}}
+</div>
+{% endblock %}
